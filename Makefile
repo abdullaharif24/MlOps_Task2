@@ -11,5 +11,5 @@ build:
 push:
 	docker push $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG)
 
-# Combined build and push
+# build
 deploy: build push
