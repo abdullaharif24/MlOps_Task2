@@ -1,6 +1,6 @@
 # Define variables
-DOCKER_USERNAME=<your-dockerhub-username>
-IMAGE_NAME=<your-app-name>
+DOCKER_USERNAME=<abdullaharif24>
+IMAGE_NAME=<MlOps_Task2>
 TAG=latest
 
 # Build Docker image
