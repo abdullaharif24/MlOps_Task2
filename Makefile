@@ -1,17 +1,15 @@
-docker:
-	docker build -t sample .
+# Define variables
+DOCKER_USERNAME=<your-dockerhub-username>
+IMAGE_NAME=<your-app-name>
+TAG=latest
 
-images:
-	docker images
+# Build Docker image
+build:
+	docker build -t $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG) .
 
-delete:
-	docker rmi sample:latest 
+# Push Docker image to Docker Hub
+push:
+	docker push $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG)
 
-containers:
-	docker ps
-
-start:
-	docker run -d -p 8000:8000 --name my_app_container sample
-
-stop:
-	@docker stop $(CONTAINER_ID)
+# Combined build and push
+deploy: build push
