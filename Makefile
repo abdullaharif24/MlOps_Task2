@@ -1,6 +1,6 @@
 # Define variables
 DOCKER_USERNAME=abdullaharif24
-IMAGE_NAME=MlOps_Task2
+IMAGE_NAME=mlops_task2  # Change to lowercase
 TAG=latest
 
 # Build Docker image
