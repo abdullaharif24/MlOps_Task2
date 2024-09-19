@@ -1,15 +1,15 @@
 # Define variables
 DOCKER_USERNAME=abdullaharif24
-IMAGE_NAME=mlops_task2  # Change to lowercase
+IMAGE_NAME=mlops_task2  # Ensure lowercase
 TAG=latest
 
-# Build Docker image
+# Build Docker image using Buildx
 build:
-	@docker build -t $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG) .
+	@docker buildx build --tag $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG) --push .
 
-# Push Docker image to Docker Hub
+# Push Docker image to Docker Hub (optional if already pushed during buildx)
 push:
 	@docker push $(DOCKER_USERNAME)/$(IMAGE_NAME):$(TAG)
 
-# Build and push
-deploy: build push
+# Combined build and push
+deploy: build
